@@ -24,7 +24,24 @@ Given any string, `looksLikeEmail()` performs the following validates that:
 1. Each domain label consists of alphanumerics and/or a hyphen.
 1. Domain labels do not start or end with a hyphen.
 
-This utility uses `@toolz/string-contains` to look for alphanumerics _across the UTF-8 spectrum_.  This means that letters are accepted when they are outside the ASCII range.
+This utility uses `@toolz/string-contains` to look for alphanumerics _across the UTF-8 spectrum_. This means that letters are accepted when they are outside the ASCII range.
+
+```javascript
+const API = {
+   arguments: {
+      string: {
+         required,
+         format: string,
+      },
+      showWarnings: {
+         optional,
+         format: Boolean,
+         defaultValue: false,
+      },
+   },
+   returns: Boolean,
+}
+```
 
 **Examples:**
 
@@ -39,8 +56,9 @@ looksLikeEmail('abc@defghijklmnopqrstuvwxzyabcdefghijklmnopqrstuvwxzyabcdefghijk
 looksLikeEmail('adam@bytebodgercom'); // FALSE
 looksLikeEmail('adam@bytebodgerbytebodgercombytebodgercombytebodgercombytebodgercombytebodgercombytebodgercombytebodgercom.com'); // FALSE
 looksLikeEmail('adam@byte*bodger.com'); // FALSE
-looksLikeEmail('adam@byte.-bodger.com'); FALSE
+looksLikeEmail('adam@byte.-bodger.com'); // FALSE
 looksLikeEmail('adam@byte-.bodger.com'); // FALSE
+looksLikeEmail('adam@byte-.bodger.com', true); // FALSE (with console warning about the error)
 looksLikeEmail('adam@byte.bodger.com'); // TRUE
 looksLikeEmail('adam_davis1@byte.bodger.com'); TRUE
 ```
