@@ -52,3 +52,4 @@ test('returns TRUE with a "normal"-looking email', () => {
    expect(looksLikeEmail('adam@byte.bodger.com')).toEqual(true);
    expect(looksLikeEmail('adam_davis1@byte.bodger.com')).toEqual(true);
 })
+
