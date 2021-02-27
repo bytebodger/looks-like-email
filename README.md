@@ -44,3 +44,4 @@ looksLikeEmail('adam@byte-.bodger.com'); // FALSE
 looksLikeEmail('adam@byte.bodger.com'); // TRUE
 looksLikeEmail('adam_davis1@byte.bodger.com'); TRUE
 ```
+
