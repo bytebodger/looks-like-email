@@ -1,6 +1,6 @@
 {
   "name": "@toolz/looks-like-email",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "A utility function that determines whether a given string looks like a valid email address",
   "keywords": [
     "email",
@@ -28,7 +28,7 @@
     "access": "public"
   },
   "dependencies": {
-    "@toolz/allow": "^1.0.8",
+    "@toolz/allow": "^1.1.4",
     "@toolz/string-contains": "^1.0.2"
   },
   "devDependencies": {
